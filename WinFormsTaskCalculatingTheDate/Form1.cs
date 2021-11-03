@@ -65,7 +65,7 @@ namespace WinFormsTaskCalculatingTheDate
                     else
                     {
                         MessageBox.Show("Дата меньше сегодняшней!!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        textBoxTime.Clear();
+                        textBoxDate.Clear();
                     }
                 }
                 else
