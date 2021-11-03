@@ -19,20 +19,16 @@ namespace WinFormsTask_Rectangles
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 Label label = new Label();
-                //rectangle.SetPosition(e.X, e.Y);
 
                 label.BorderStyle = BorderStyle.Fixed3D;
-                //определение позиции статика в зависимости с какой стороны его начали расовать
+
+                //определение позиции обьекта в зависимости с какой стороны его начали расовать
                 if (e.X > rectangle.X && e.Y > rectangle.Y)
                 {
                     label.Location = new Point(rectangle.X, rectangle.Y);
@@ -57,15 +53,15 @@ namespace WinFormsTask_Rectangles
                 }
                 else
                 {
-                    //заполнение опций нового статика
                     label.Size = new Size(e.X - rectangle.X, e.Y - rectangle.Y);
                     label.Text = $"{Rectangle.number}";
                     label.BackColor = Color.DarkOliveGreen;
                     label.FlatStyle = FlatStyle.Flat;
 
-                    Controls.Add(label); //Добавление нвого статика в коллекцию элементов управления.
+                    Controls.Add(label); //Добавление нвого обьекта в коллекцию элементов управления.
                     Text = $"Объект номер №{label.Text} - создан!";
-                    label.MouseClick += Form1_MouseClick; //подписываем на два события для статика
+
+                    label.MouseClick += Form1_MouseClick; 
                     label.MouseDoubleClick += Form1_MouseDoubleClick;
                 }
             }
@@ -140,11 +136,6 @@ namespace WinFormsTask_Rectangles
             number++;
         }
 
-        public void SetPosition(int x, int y)
-        {
-            X = x;
-            Y = y;
-        }
     }
 
 
