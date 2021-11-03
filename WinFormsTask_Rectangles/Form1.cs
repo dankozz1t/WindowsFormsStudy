@@ -1,60 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsTask_Rectangles
 {
     public partial class Form1 : Form
     {
-        private Rectangle rectangle;
+        private Object _object;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 Label label = new Label();
-
                 label.BorderStyle = BorderStyle.Fixed3D;
 
                 //определение позиции обьекта в зависимости с какой стороны его начали расовать
-                if (e.X > rectangle.X && e.Y > rectangle.Y)
-                {
-                    label.Location = new Point(rectangle.X, rectangle.Y);
-                }
-                else if (e.X > rectangle.X && e.Y < rectangle.Y)
-                {
-                    label.Location = new Point(rectangle.X, e.Y);
-                }
-                else if (e.X < rectangle.X && e.Y < rectangle.Y)
-                {
+                if (e.X > _object.X && e.Y > _object.Y)
+                    label.Location = new Point(_object.X, _object.Y);
+                else if (e.X > _object.X && e.Y < _object.Y)
+                    label.Location = new Point(_object.X, e.Y);
+                else if (e.X < _object.X && e.Y < _object.Y)
                     label.Location = new Point(e.X, e.Y);
-                }
                 else
-                {
-                    label.Location = new Point(e.X, rectangle.Y);
-                }
+                    label.Location = new Point(e.X, _object.Y);
+                
 
-                if (e.X - rectangle.X <= 10 || e.Y - rectangle.Y <= 10)
+                if (e.X - _object.X <= 10 || e.Y - _object.Y <= 10)
                 {
-                    MessageBox.Show("Невозможно создать объект меньше чем 10х10", "Ошибка!", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                    MessageBox.Show("Невозможно создать объект меньше чем 10х10", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    label.Size = new Size(e.X - rectangle.X, e.Y - rectangle.Y);
-                    label.Text = $"{Rectangle.number}";
+                    label.Size = new Size(e.X - _object.X, e.Y - _object.Y);
+                    label.Text = $"{Object.number}";
                     label.BackColor = Color.DarkOliveGreen;
                     label.FlatStyle = FlatStyle.Flat;
 
@@ -74,7 +58,7 @@ namespace WinFormsTask_Rectangles
         {
             if (e.Button == MouseButtons.Left)
             {
-                rectangle = new Rectangle(e.X, e.Y);
+                _object = new Object(e.X, e.Y);
             }
         }
 
@@ -95,7 +79,7 @@ namespace WinFormsTask_Rectangles
 
         private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            int numLabel = Rectangle.number;
+            int numLabel = Object.number;
             if (e.Button == MouseButtons.Left)
             {
                 foreach (Label item in Controls)
@@ -123,13 +107,13 @@ namespace WinFormsTask_Rectangles
         }
     }
 
-    public class Rectangle
+    public class Object
     {
         public int X { get; set; }
         public int Y { get; set; }
         public static int number { get; set; }
 
-        public Rectangle(int x, int y)
+        public Object(int x, int y)
         {
             X = x;
             Y = y;
