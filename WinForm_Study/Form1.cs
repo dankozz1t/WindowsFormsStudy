@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace WinForm_Study
 {
     public partial class Form1 : Form
     {
+
+
         public Form1()
         {
             InitializeComponent();
@@ -19,10 +17,23 @@ namespace WinForm_Study
 
         private void GlobalBtm_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Аууууууууууууу!!!", "Ау", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
-            if (res == DialogResult.Yes)
+            if (progressBar1.Value < 100)
             {
-                MessageBox.Show("Вы нажали ДА", "Сработало нажатие ДА", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                for (int i = 0; i <= 100; i++)
+                {
+                    progressBar1.Value = i;
+                    Thread.Sleep(50);
+                }
+            }
+            else
+            {
+                DialogResult res = MessageBox.Show("Аууууууууууууу!!!", "Ау", MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Exclamation);
+                if (res == DialogResult.Yes)
+                {
+                    MessageBox.Show("Вы нажали ДА", "Сработало нажатие ДА", MessageBoxButtons.OK,
+                        MessageBoxIcon.Asterisk);
+                }
             }
         }
 
@@ -101,11 +112,78 @@ namespace WinForm_Study
         private void timer1_Tick(object sender, EventArgs e)
         {
             label2.Text = DateTime.Now.ToLongTimeString();
+            toolStripStatusLabel1.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("ЗАЙКА!", "вы нажали на зайку", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+
+        List<Label> list;
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            list = new List<Label>();
+            listBox1.Items.Add(textBox1.Text);
+            textBox1.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count > 0)
+            {
+                if (listBox1.SelectedItems != null)
+                {
+                    for (int i = 0; i < listBox1.SelectedItems.Count; i++)
+                    {
+                        listBox2.Items.Add(listBox1.SelectedItems[i]);
+                    }
+                }
+
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count > 0)
+            {
+                if (listBox1.SelectedItems != null)
+                {
+                    while (listBox1.SelectedItems.Count > 0)
+                    {
+                        for (int i = 0; i < listBox1.SelectedItems.Count; i++)
+                        {
+                            listBox2.Items.Add(listBox1.SelectedItems[i]);
+                            listBox1.Items.Remove(listBox1.SelectedItems[i]);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void buttonCheListBox_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem != null)
+                MessageBox.Show($"Выбран {comboBox1.SelectedItem.ToString()}", comboBox1.SelectedItem.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(listBox2.Items.Count <= 100)
+                progressBar2.Value = listBox2.Items.Count;
+        }
+
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            this.pictureBox1.BackColor = Color.FromArgb(trackBar1.Value,trackBar2.Value, trackBar3.Value);
         }
     }
 }

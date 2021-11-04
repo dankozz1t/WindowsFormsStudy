@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsTask_CreateObject",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsTaskCalculatingTheDate", "..\WinFormsTaskCalculatingTheDate\WinFormsTaskCalculatingTheDate.csproj", "{8064FA47-2066-4574-BC27-017CBAA5CE01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsTask_BestOil", "..\WinFormsTask_BestOil\WinFormsTask_BestOil.csproj", "{FC5D3EF4-01BD-4A8C-957E-3178BBB899D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8064FA47-2066-4574-BC27-017CBAA5CE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8064FA47-2066-4574-BC27-017CBAA5CE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8064FA47-2066-4574-BC27-017CBAA5CE01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC5D3EF4-01BD-4A8C-957E-3178BBB899D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC5D3EF4-01BD-4A8C-957E-3178BBB899D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC5D3EF4-01BD-4A8C-957E-3178BBB899D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC5D3EF4-01BD-4A8C-957E-3178BBB899D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
