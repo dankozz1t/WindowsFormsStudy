@@ -10,14 +10,34 @@ namespace WinFormsTask_BestOil
         private Dictionary<string, float> petrol = new Dictionary<string, float>();
 
         //Обьекты для отслеживания количества продуктов для подсчета общей суммы
-        private PastValue pastValueCountProducts1 = new PastValue();
-        private PastValue pastValueCountProducts2 = new PastValue();
-        private PastValue pastValueCountProducts3 = new PastValue();
-        private PastValue pastValueCountProducts4 = new PastValue();
+
+
+        private List<Product> products = new List<Product>();
+
+        private List<CheckBox> checkBoxes;
+        private List<TextBox> textBoxes;
+        private List<NumericUpDown> numericUpDowns;
 
         public Form1()
         {
             InitializeComponent();
+
+            products = new List<Product>()
+            {
+                new Product { Name = "Чай", Price = 3.3M },
+                new Product { Name = "Кофе", Price = 3.3M },
+                new Product { Name = "Булка", Price = 3.3M },
+                new Product { Name = "Какао", Price = 3.3M },
+                new Product { Name = "Чай", Price = 3.3M }
+            };
+
+            checkBoxes = new List<CheckBox>(products.Count);
+            textBoxes = new List<TextBox>(products.Count);
+            numericUpDowns = new List<NumericUpDown>(products.Count);
+
+            CreatePanelProduct();
+
+
 
             //---------------------Инициализация бензина 
             petrol.Add("A-92", (float)26.57);
@@ -35,9 +55,80 @@ namespace WinFormsTask_BestOil
             comboBoxGSPetrol.Text = comboBoxGSPetrol.Items[0].ToString(); //По умолчанию берет первый элемент (бензина)
         }
 
+        private void CreatePanelProduct()
+        {
+            checkBoxes.Clear();
+            textBoxes.Clear();
+            numericUpDowns.Clear();
+            panel1.Controls.Clear();
+
+            for (int i = 0; i < products.Count; i++)
+            {
+                CheckBox checkBox = new CheckBox();
+                checkBox.Text = products[i].Name;
+                checkBox.Location = new Point(6, 5 + i * 25);
+
+                checkBox.CheckedChanged += CheckBox_CheckedChanged;
+                checkBoxes.Add(checkBox);
+
+                TextBox textBox = new TextBox();
+                textBox.Location = new Point(120, 5 + i * 25);
+                textBox.Size = new Size(44, 20);
+                textBox.Text = products[i].Price.ToString();
+                textBox.Enabled = false;
+
+                textBoxes.Add(textBox);
+
+                NumericUpDown numeric = new NumericUpDown();
+                numeric.Location = new Point(170, 5 + i * 25);
+                numeric.Size = new Size(44, 20);
+                numeric.Value = 0;
+                numeric.Enabled = false;
+
+                numeric.ValueChanged += Numeric_ValueChanged;
+                numericUpDowns.Add(numeric);
+
+                panel1.Controls.Add(checkBox);
+                panel1.Controls.Add(textBox);
+                panel1.Controls.Add(numeric);
+
+
+                //checkBox.CheckedChanged += TextBox_EnabledChanged;
+                //CheckedCheckBox(checkBox, numeric);
+            }
+        }
+
+        private void Numeric_ValueChanged(object sender, EventArgs e)
+        {
+            decimal sum = 0;
+            for (int i = 0; i < checkBoxes.Count; i++)
+            {
+                if (checkBoxes[i].Checked)
+                {
+                    sum += products[i].Price * numericUpDowns[i].Value;
+                }
+            }
+
+            labelMCSumGlobal.Text = sum.ToString("0.00");
+        }
+
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBox = sender as CheckBox;
+            if (checkBox.Checked)
+            {
+                numericUpDowns[checkBoxes.IndexOf(checkBox)].Enabled = true;
+            }
+            else
+            {
+                numericUpDowns[checkBoxes.IndexOf(checkBox)].Value = 0;
+                numericUpDowns[checkBoxes.IndexOf(checkBox)].Enabled = false;
+            }
+        }
+
         private void TextBox_EnabledChanged(object sender, EventArgs e)
         {
-            var textBox = (TextBox)sender;
+            TextBox textBox = sender as TextBox;
 
             if (textBox.Enabled)
                 textBox.BackColor = Color.White;
@@ -133,94 +224,64 @@ namespace WinFormsTask_BestOil
             }
         }
 
-        private void CheckedCheckBox(CheckBox checkBox, NumericUpDown numericUpDown) //Метод проверки активности чекбокса
+        private void buttonAddProduct_Click(object sender, EventArgs e)
         {
-            if (checkBox.Checked)
+            FormProduct formProduct = new FormProduct();
+            formProduct.Text = "Добавление товара";
+            if (formProduct.ShowDialog() == DialogResult.OK)
             {
-                numericUpDown.Enabled = true;
-                numericUpDown.Value = 0;
+                products.Add(new Product {Name = formProduct.Product, Price = formProduct.Price});
+                CreatePanelProduct();
+            }
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            int count = 0;
+            for (int i = 0; i < checkBoxes.Count; i++)
+            {
+                if (checkBoxes[i].Checked)
+                {
+                    count++;
+                }
+            }
+
+            if (count > 1)
+            {
+                MessageBox.Show("Выбраных товаров больше одного", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                numericUpDown.Value = 0;
-                numericUpDown.Enabled = false;
-            }
-        }
+                int ind = 0;
+                for (int i = 0; i < checkBoxes.Count; i++)
+                {
+                    if (checkBoxes[i].Checked)
+                    {
+                        ind = i;
+                        break;
+                    }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedCheckBox(checkBox1, numericCafeProduct1);
-        }
+                }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedCheckBox(checkBox2, numericCafeProduct2);
-        }
+                FormProduct formProduct = new FormProduct();
+                formProduct.Text = "Редактирование товара";
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedCheckBox(checkBox3, numericCafeProduct3);
-        }
+                formProduct.Product = checkBoxes[ind].Text;
+                formProduct.Price = Convert.ToDecimal(textBoxes[ind].Text);
 
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedCheckBox(checkBox4, numericCafeProduct4);
-        }
-
-
-        private void CheckedPriceValueChanged(TextBox price, bool operation) //Метод изменения общей суммы Кафе
-        {
-            float sum = float.Parse(price.Text);
-            float oldSum = float.Parse(labelMCSumGlobal.Text);
-
-            if (operation)
-            {
-                labelMCSumGlobal.Text = Convert.ToString(oldSum + sum);
-            }
-            else
-            {
-                labelMCSumGlobal.Text = Convert.ToString(oldSum - sum);
-            }
-        }
-
-        private void CheckedGlobalValueChanged(NumericUpDown cafeProduct, TextBox price, PastValue pastValue) //Метод проверки прошлого колв продуктов
-        {
-            if ((int)cafeProduct.Value > pastValue.value) //Если количество продуктов больше прошлого количества, тогда + цена, иначе -
-            {
-                CheckedPriceValueChanged(price, true);
-            }
-            else
-            {
-                CheckedPriceValueChanged(price, false); 
+                if (formProduct.ShowDialog() == DialogResult.OK)
+                {
+                    products[ind] = new Product { Name = formProduct.Product, Price = formProduct.Price };
+                    CreatePanelProduct();
+                }
             }
 
-            pastValue.value = (int)cafeProduct.Value; //Обновляю прошлое значение колв продуктов.
         }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            CheckedGlobalValueChanged(numericCafeProduct1, textBoxPrice1, pastValueCountProducts1);
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-            CheckedGlobalValueChanged(numericCafeProduct2, textBoxPrice2, pastValueCountProducts2);
-        }
-
-        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
-        {
-            CheckedGlobalValueChanged(numericCafeProduct3, textBoxPrice3, pastValueCountProducts3);
-        }
-
-        private void numericUpDown4_ValueChanged(object sender, EventArgs e)
-        {
-            CheckedGlobalValueChanged(numericCafeProduct4, textBoxPrice4, pastValueCountProducts4);
-        }
-
     }
 
-    public class PastValue
+    public class Product
     {
-        public int value = -1;
+        public string Name;
+        public decimal Price;
     }
 }

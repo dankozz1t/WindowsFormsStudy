@@ -52,18 +52,10 @@ namespace WinFormsTask_BestOil
             this.labelSum = new System.Windows.Forms.Label();
             this.labelCurrency = new System.Windows.Forms.Label();
             this.groupBoxMiniCafe = new System.Windows.Forms.GroupBox();
-            this.numericCafeProduct4 = new System.Windows.Forms.NumericUpDown();
-            this.numericCafeProduct3 = new System.Windows.Forms.NumericUpDown();
-            this.numericCafeProduct2 = new System.Windows.Forms.NumericUpDown();
-            this.numericCafeProduct1 = new System.Windows.Forms.NumericUpDown();
-            this.textBoxPrice4 = new System.Windows.Forms.TextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.textBoxPrice3 = new System.Windows.Forms.TextBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBoxPrice2 = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBoxPrice1 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonAddProduct = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.labelMCMoney = new System.Windows.Forms.Label();
             this.labelMCCount = new System.Windows.Forms.Label();
             this.groupBoxMCToPay = new System.Windows.Forms.GroupBox();
@@ -75,10 +67,6 @@ namespace WinFormsTask_BestOil
             this.groupBoxToPay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFrayMoney)).BeginInit();
             this.groupBoxMiniCafe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericCafeProduct4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericCafeProduct3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericCafeProduct2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericCafeProduct1)).BeginInit();
             this.groupBoxMCToPay.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -246,14 +234,14 @@ namespace WinFormsTask_BestOil
             // 
             // labelGSResult
             // 
-            this.labelGSResult.AutoSize = true;
             this.labelGSResult.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelGSResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.labelGSResult.Location = new System.Drawing.Point(70, 19);
+            this.labelGSResult.Location = new System.Drawing.Point(50, 19);
             this.labelGSResult.Name = "labelGSResult";
-            this.labelGSResult.Size = new System.Drawing.Size(35, 37);
+            this.labelGSResult.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelGSResult.Size = new System.Drawing.Size(138, 37);
             this.labelGSResult.TabIndex = 7;
-            this.labelGSResult.Text = "0";
+            this.labelGSResult.Text = "0.00";
             // 
             // labelGSUnit
             // 
@@ -310,14 +298,14 @@ namespace WinFormsTask_BestOil
             // 
             // labelSum
             // 
-            this.labelSum.AutoSize = true;
             this.labelSum.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.labelSum.Location = new System.Drawing.Point(304, 27);
+            this.labelSum.Location = new System.Drawing.Point(286, 29);
             this.labelSum.Name = "labelSum";
-            this.labelSum.Size = new System.Drawing.Size(42, 44);
+            this.labelSum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelSum.Size = new System.Drawing.Size(173, 44);
             this.labelSum.TabIndex = 7;
-            this.labelSum.Text = "0";
+            this.labelSum.Text = "0.00";
             // 
             // labelCurrency
             // 
@@ -333,18 +321,10 @@ namespace WinFormsTask_BestOil
             // groupBoxMiniCafe
             // 
             this.groupBoxMiniCafe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxMiniCafe.Controls.Add(this.numericCafeProduct4);
-            this.groupBoxMiniCafe.Controls.Add(this.numericCafeProduct3);
-            this.groupBoxMiniCafe.Controls.Add(this.numericCafeProduct2);
-            this.groupBoxMiniCafe.Controls.Add(this.numericCafeProduct1);
-            this.groupBoxMiniCafe.Controls.Add(this.textBoxPrice4);
-            this.groupBoxMiniCafe.Controls.Add(this.checkBox4);
-            this.groupBoxMiniCafe.Controls.Add(this.textBoxPrice3);
-            this.groupBoxMiniCafe.Controls.Add(this.checkBox3);
-            this.groupBoxMiniCafe.Controls.Add(this.textBoxPrice2);
-            this.groupBoxMiniCafe.Controls.Add(this.checkBox2);
-            this.groupBoxMiniCafe.Controls.Add(this.textBoxPrice1);
-            this.groupBoxMiniCafe.Controls.Add(this.checkBox1);
+            this.groupBoxMiniCafe.Controls.Add(this.buttonDelete);
+            this.groupBoxMiniCafe.Controls.Add(this.buttonEdit);
+            this.groupBoxMiniCafe.Controls.Add(this.buttonAddProduct);
+            this.groupBoxMiniCafe.Controls.Add(this.panel1);
             this.groupBoxMiniCafe.Controls.Add(this.labelMCMoney);
             this.groupBoxMiniCafe.Controls.Add(this.labelMCCount);
             this.groupBoxMiniCafe.Controls.Add(this.groupBoxMCToPay);
@@ -357,134 +337,42 @@ namespace WinFormsTask_BestOil
             this.groupBoxMiniCafe.TabStop = false;
             this.groupBoxMiniCafe.Text = "Мини-Кафе";
             // 
-            // numericCafeProduct4
+            // buttonDelete
             // 
-            this.numericCafeProduct4.BackColor = System.Drawing.Color.LightGray;
-            this.numericCafeProduct4.Enabled = false;
-            this.numericCafeProduct4.Location = new System.Drawing.Point(186, 119);
-            this.numericCafeProduct4.Name = "numericCafeProduct4";
-            this.numericCafeProduct4.Size = new System.Drawing.Size(54, 23);
-            this.numericCafeProduct4.TabIndex = 26;
-            this.numericCafeProduct4.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
+            this.buttonDelete.Location = new System.Drawing.Point(41, 173);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(32, 23);
+            this.buttonDelete.TabIndex = 27;
+            this.buttonDelete.Text = "-";
+            this.buttonDelete.UseVisualStyleBackColor = true;
             // 
-            // numericCafeProduct3
+            // buttonEdit
             // 
-            this.numericCafeProduct3.BackColor = System.Drawing.Color.LightGray;
-            this.numericCafeProduct3.Enabled = false;
-            this.numericCafeProduct3.Location = new System.Drawing.Point(186, 91);
-            this.numericCafeProduct3.Name = "numericCafeProduct3";
-            this.numericCafeProduct3.Size = new System.Drawing.Size(54, 23);
-            this.numericCafeProduct3.TabIndex = 25;
-            this.numericCafeProduct3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            this.buttonEdit.Location = new System.Drawing.Point(79, 173);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(32, 23);
+            this.buttonEdit.TabIndex = 26;
+            this.buttonEdit.Text = "?";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
-            // numericCafeProduct2
+            // buttonAddProduct
             // 
-            this.numericCafeProduct2.BackColor = System.Drawing.Color.LightGray;
-            this.numericCafeProduct2.Enabled = false;
-            this.numericCafeProduct2.Location = new System.Drawing.Point(186, 62);
-            this.numericCafeProduct2.Name = "numericCafeProduct2";
-            this.numericCafeProduct2.Size = new System.Drawing.Size(54, 23);
-            this.numericCafeProduct2.TabIndex = 24;
-            this.numericCafeProduct2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.buttonAddProduct.Location = new System.Drawing.Point(6, 173);
+            this.buttonAddProduct.Name = "buttonAddProduct";
+            this.buttonAddProduct.Size = new System.Drawing.Size(32, 23);
+            this.buttonAddProduct.TabIndex = 25;
+            this.buttonAddProduct.Text = "+";
+            this.buttonAddProduct.UseVisualStyleBackColor = true;
+            this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
             // 
-            // numericCafeProduct1
+            // panel1
             // 
-            this.numericCafeProduct1.BackColor = System.Drawing.Color.LightGray;
-            this.numericCafeProduct1.Enabled = false;
-            this.numericCafeProduct1.Location = new System.Drawing.Point(186, 31);
-            this.numericCafeProduct1.Name = "numericCafeProduct1";
-            this.numericCafeProduct1.Size = new System.Drawing.Size(54, 23);
-            this.numericCafeProduct1.TabIndex = 23;
-            this.numericCafeProduct1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // textBoxPrice4
-            // 
-            this.textBoxPrice4.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxPrice4.Enabled = false;
-            this.textBoxPrice4.Location = new System.Drawing.Point(126, 119);
-            this.textBoxPrice4.Name = "textBoxPrice4";
-            this.textBoxPrice4.Size = new System.Drawing.Size(54, 23);
-            this.textBoxPrice4.TabIndex = 21;
-            this.textBoxPrice4.Text = "5,00";
-            this.textBoxPrice4.EnabledChanged += new System.EventHandler(this.TextBox_EnabledChanged);
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.checkBox4.Location = new System.Drawing.Point(6, 119);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(101, 22);
-            this.checkBox4.TabIndex = 20;
-            this.checkBox4.Text = "Кока-кола";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
-            // 
-            // textBoxPrice3
-            // 
-            this.textBoxPrice3.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxPrice3.Enabled = false;
-            this.textBoxPrice3.Location = new System.Drawing.Point(126, 90);
-            this.textBoxPrice3.Name = "textBoxPrice3";
-            this.textBoxPrice3.Size = new System.Drawing.Size(54, 23);
-            this.textBoxPrice3.TabIndex = 18;
-            this.textBoxPrice3.Text = "7,20";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.checkBox3.Location = new System.Drawing.Point(6, 90);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(120, 22);
-            this.checkBox3.TabIndex = 17;
-            this.checkBox3.Text = "Картош.-фри";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
-            // textBoxPrice2
-            // 
-            this.textBoxPrice2.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxPrice2.Enabled = false;
-            this.textBoxPrice2.Location = new System.Drawing.Point(126, 61);
-            this.textBoxPrice2.Name = "textBoxPrice2";
-            this.textBoxPrice2.Size = new System.Drawing.Size(54, 23);
-            this.textBoxPrice2.TabIndex = 15;
-            this.textBoxPrice2.Text = "5,40";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.checkBox2.Location = new System.Drawing.Point(6, 61);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(104, 22);
-            this.checkBox2.TabIndex = 14;
-            this.checkBox2.Text = "Гамбургер";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // textBoxPrice1
-            // 
-            this.textBoxPrice1.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxPrice1.Enabled = false;
-            this.textBoxPrice1.Location = new System.Drawing.Point(126, 32);
-            this.textBoxPrice1.Name = "textBoxPrice1";
-            this.textBoxPrice1.Size = new System.Drawing.Size(54, 23);
-            this.textBoxPrice1.TabIndex = 12;
-            this.textBoxPrice1.Text = "4,00";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.checkBox1.Location = new System.Drawing.Point(6, 32);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(84, 22);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "Хот-Дог";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(6, 32);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(234, 135);
+            this.panel1.TabIndex = 24;
             // 
             // labelMCMoney
             // 
@@ -520,14 +408,14 @@ namespace WinFormsTask_BestOil
             // 
             // labelMCSumGlobal
             // 
-            this.labelMCSumGlobal.AutoSize = true;
             this.labelMCSumGlobal.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelMCSumGlobal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.labelMCSumGlobal.Location = new System.Drawing.Point(85, 19);
+            this.labelMCSumGlobal.Location = new System.Drawing.Point(50, 19);
             this.labelMCSumGlobal.Name = "labelMCSumGlobal";
-            this.labelMCSumGlobal.Size = new System.Drawing.Size(35, 37);
+            this.labelMCSumGlobal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelMCSumGlobal.Size = new System.Drawing.Size(136, 37);
             this.labelMCSumGlobal.TabIndex = 7;
-            this.labelMCSumGlobal.Text = "0";
+            this.labelMCSumGlobal.Text = "0.00";
             // 
             // labelMCCurrency
             // 
@@ -550,6 +438,7 @@ namespace WinFormsTask_BestOil
             this.Controls.Add(this.groupBoxGasStation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BestOil";
             this.groupBoxGasStation.ResumeLayout(false);
             this.groupBoxGasStation.PerformLayout();
@@ -562,10 +451,6 @@ namespace WinFormsTask_BestOil
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFrayMoney)).EndInit();
             this.groupBoxMiniCafe.ResumeLayout(false);
             this.groupBoxMiniCafe.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericCafeProduct4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericCafeProduct3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericCafeProduct2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericCafeProduct1)).EndInit();
             this.groupBoxMCToPay.ResumeLayout(false);
             this.groupBoxMCToPay.PerformLayout();
             this.ResumeLayout(false);
@@ -593,14 +478,6 @@ namespace WinFormsTask_BestOil
         private System.Windows.Forms.GroupBox groupBoxToPay;
         private System.Windows.Forms.Label labelCurrency;
         private System.Windows.Forms.GroupBox groupBoxMiniCafe;
-        private System.Windows.Forms.TextBox textBoxPrice4;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.TextBox textBoxPrice3;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.TextBox textBoxPrice2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBoxPrice1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label labelMCMoney;
         private System.Windows.Forms.Label labelMCCount;
         private System.Windows.Forms.GroupBox groupBoxMCToPay;
@@ -609,10 +486,10 @@ namespace WinFormsTask_BestOil
         private System.Windows.Forms.Button buttonCalculate;
         private System.Windows.Forms.PictureBox pictureBoxFrayMoney;
         private System.Windows.Forms.Label labelSum;
-        private System.Windows.Forms.NumericUpDown numericCafeProduct4;
-        private System.Windows.Forms.NumericUpDown numericCafeProduct3;
-        private System.Windows.Forms.NumericUpDown numericCafeProduct2;
-        private System.Windows.Forms.NumericUpDown numericCafeProduct1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonAddProduct;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }
 
