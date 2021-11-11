@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsTask_BestOil
 {
-    partial class Form1
+    partial class BestOil
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,7 +29,7 @@ namespace WinFormsTask_BestOil
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BestOil));
             this.groupBoxGasStation = new System.Windows.Forms.GroupBox();
             this.textBoxGSPrice = new System.Windows.Forms.TextBox();
             this.labelGSPrice = new System.Windows.Forms.Label();
@@ -52,9 +52,6 @@ namespace WinFormsTask_BestOil
             this.labelSum = new System.Windows.Forms.Label();
             this.labelCurrency = new System.Windows.Forms.Label();
             this.groupBoxMiniCafe = new System.Windows.Forms.GroupBox();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonAddProduct = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelMCMoney = new System.Windows.Forms.Label();
             this.labelMCCount = new System.Windows.Forms.Label();
@@ -97,7 +94,7 @@ namespace WinFormsTask_BestOil
             this.textBoxGSPrice.BackColor = System.Drawing.Color.LightGray;
             this.textBoxGSPrice.Enabled = false;
             this.textBoxGSPrice.ForeColor = System.Drawing.Color.Black;
-            this.textBoxGSPrice.Location = new System.Drawing.Point(83, 81);
+            this.textBoxGSPrice.Location = new System.Drawing.Point(83, 59);
             this.textBoxGSPrice.Name = "textBoxGSPrice";
             this.textBoxGSPrice.Size = new System.Drawing.Size(121, 23);
             this.textBoxGSPrice.TabIndex = 11;
@@ -107,7 +104,7 @@ namespace WinFormsTask_BestOil
             this.labelGSPrice.AutoSize = true;
             this.labelGSPrice.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelGSPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.labelGSPrice.Location = new System.Drawing.Point(9, 81);
+            this.labelGSPrice.Location = new System.Drawing.Point(9, 61);
             this.labelGSPrice.Name = "labelGSPrice";
             this.labelGSPrice.Size = new System.Drawing.Size(52, 21);
             this.labelGSPrice.TabIndex = 10;
@@ -118,7 +115,7 @@ namespace WinFormsTask_BestOil
             this.labelGSPetrol.AutoSize = true;
             this.labelGSPetrol.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelGSPetrol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.labelGSPetrol.Location = new System.Drawing.Point(9, 35);
+            this.labelGSPetrol.Location = new System.Drawing.Point(9, 27);
             this.labelGSPetrol.Name = "labelGSPetrol";
             this.labelGSPetrol.Size = new System.Drawing.Size(70, 21);
             this.labelGSPetrol.TabIndex = 9;
@@ -128,7 +125,7 @@ namespace WinFormsTask_BestOil
             // 
             this.labelGSCurrency1.AutoSize = true;
             this.labelGSCurrency1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.labelGSCurrency1.Location = new System.Drawing.Point(207, 83);
+            this.labelGSCurrency1.Location = new System.Drawing.Point(207, 64);
             this.labelGSCurrency1.Name = "labelGSCurrency1";
             this.labelGSCurrency1.Size = new System.Drawing.Size(36, 18);
             this.labelGSCurrency1.TabIndex = 8;
@@ -138,7 +135,7 @@ namespace WinFormsTask_BestOil
             // 
             this.comboBoxGSPetrol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGSPetrol.FormattingEnabled = true;
-            this.comboBoxGSPetrol.Location = new System.Drawing.Point(83, 35);
+            this.comboBoxGSPetrol.Location = new System.Drawing.Point(83, 27);
             this.comboBoxGSPetrol.Name = "comboBoxGSPetrol";
             this.comboBoxGSPetrol.Size = new System.Drawing.Size(121, 26);
             this.comboBoxGSPetrol.TabIndex = 6;
@@ -148,7 +145,7 @@ namespace WinFormsTask_BestOil
             // 
             this.labelGSCurrency2.AutoSize = true;
             this.labelGSCurrency2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.labelGSCurrency2.Location = new System.Drawing.Point(207, 164);
+            this.labelGSCurrency2.Location = new System.Drawing.Point(207, 147);
             this.labelGSCurrency2.Name = "labelGSCurrency2";
             this.labelGSCurrency2.Size = new System.Drawing.Size(36, 18);
             this.labelGSCurrency2.TabIndex = 5;
@@ -158,7 +155,7 @@ namespace WinFormsTask_BestOil
             // 
             this.labelGSLiters.AutoSize = true;
             this.labelGSLiters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(152)))), ((int)(((byte)(169)))));
-            this.labelGSLiters.Location = new System.Drawing.Point(207, 129);
+            this.labelGSLiters.Location = new System.Drawing.Point(207, 112);
             this.labelGSLiters.Name = "labelGSLiters";
             this.labelGSLiters.Size = new System.Drawing.Size(20, 18);
             this.labelGSLiters.TabIndex = 4;
@@ -168,7 +165,7 @@ namespace WinFormsTask_BestOil
             // 
             this.textBoxGSMoney.BackColor = System.Drawing.Color.LightGray;
             this.textBoxGSMoney.Enabled = false;
-            this.textBoxGSMoney.Location = new System.Drawing.Point(152, 162);
+            this.textBoxGSMoney.Location = new System.Drawing.Point(149, 144);
             this.textBoxGSMoney.Name = "textBoxGSMoney";
             this.textBoxGSMoney.Size = new System.Drawing.Size(52, 23);
             this.textBoxGSMoney.TabIndex = 3;
@@ -179,7 +176,7 @@ namespace WinFormsTask_BestOil
             // 
             this.textBoxGSLiters.BackColor = System.Drawing.Color.LightGray;
             this.textBoxGSLiters.Enabled = false;
-            this.textBoxGSLiters.Location = new System.Drawing.Point(152, 125);
+            this.textBoxGSLiters.Location = new System.Drawing.Point(149, 107);
             this.textBoxGSLiters.Name = "textBoxGSLiters";
             this.textBoxGSLiters.Size = new System.Drawing.Size(52, 23);
             this.textBoxGSLiters.TabIndex = 2;
@@ -190,7 +187,7 @@ namespace WinFormsTask_BestOil
             // 
             this.groupBoxGSChoice.Controls.Add(this.radioButtonGSSum);
             this.groupBoxGSChoice.Controls.Add(this.radioButtonGSCount);
-            this.groupBoxGSChoice.Location = new System.Drawing.Point(6, 115);
+            this.groupBoxGSChoice.Location = new System.Drawing.Point(6, 97);
             this.groupBoxGSChoice.Name = "groupBoxGSChoice";
             this.groupBoxGSChoice.Size = new System.Drawing.Size(130, 70);
             this.groupBoxGSChoice.TabIndex = 1;
@@ -321,9 +318,6 @@ namespace WinFormsTask_BestOil
             // groupBoxMiniCafe
             // 
             this.groupBoxMiniCafe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxMiniCafe.Controls.Add(this.buttonDelete);
-            this.groupBoxMiniCafe.Controls.Add(this.buttonEdit);
-            this.groupBoxMiniCafe.Controls.Add(this.buttonAddProduct);
             this.groupBoxMiniCafe.Controls.Add(this.panel1);
             this.groupBoxMiniCafe.Controls.Add(this.labelMCMoney);
             this.groupBoxMiniCafe.Controls.Add(this.labelMCCount);
@@ -336,35 +330,6 @@ namespace WinFormsTask_BestOil
             this.groupBoxMiniCafe.TabIndex = 1;
             this.groupBoxMiniCafe.TabStop = false;
             this.groupBoxMiniCafe.Text = "Мини-Кафе";
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(41, 173);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(32, 23);
-            this.buttonDelete.TabIndex = 27;
-            this.buttonDelete.Text = "-";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Location = new System.Drawing.Point(79, 173);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(32, 23);
-            this.buttonEdit.TabIndex = 26;
-            this.buttonEdit.Text = "?";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
-            // buttonAddProduct
-            // 
-            this.buttonAddProduct.Location = new System.Drawing.Point(6, 173);
-            this.buttonAddProduct.Name = "buttonAddProduct";
-            this.buttonAddProduct.Size = new System.Drawing.Size(32, 23);
-            this.buttonAddProduct.TabIndex = 25;
-            this.buttonAddProduct.Text = "+";
-            this.buttonAddProduct.UseVisualStyleBackColor = true;
-            this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
             // 
             // panel1
             // 
@@ -427,7 +392,7 @@ namespace WinFormsTask_BestOil
             this.labelMCCurrency.TabIndex = 6;
             this.labelMCCurrency.Text = "грн.";
             // 
-            // Form1
+            // BestOil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -437,7 +402,7 @@ namespace WinFormsTask_BestOil
             this.Controls.Add(this.groupBoxMiniCafe);
             this.Controls.Add(this.groupBoxGasStation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "BestOil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BestOil";
             this.groupBoxGasStation.ResumeLayout(false);
@@ -487,9 +452,6 @@ namespace WinFormsTask_BestOil
         private System.Windows.Forms.PictureBox pictureBoxFrayMoney;
         private System.Windows.Forms.Label labelSum;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Button buttonAddProduct;
-        private System.Windows.Forms.Button buttonDelete;
     }
 }
 
