@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ArrayOfPentol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pentol>
+    <Name>A-92</Name>
+    <Price>26.57</Price>
+  </Pentol>
+  <Pentol>
+    <Name>A-95</Name>
+    <Price>27.35</Price>
+  </Pentol>
+  <Pentol>
+    <Name>A-95++++</Name>
+    <Price>90.31</Price>
+  </Pentol>
+  <Pentol>
+    <Name>ДТ</Name>
+    <Price>25.15</Price>
+  </Pentol>
+  <Pentol>
+    <Name>Газ</Name>
+    <Price>12.58</Price>
+  </Pentol>
+  <Pentol>
+    <Name>syper-speed</Name>
+    <Price>0.01</Price>
+  </Pentol>
+</ArrayOfPentol>
