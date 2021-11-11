@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsTask_BestOil", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForm_Study2", "..\WinForm_Study2\WinForm_Study2.csproj", "{D5EAC2C6-6F05-4EAA-89B3-3CD847B2A343}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForm_Study3", "..\WinForm_Study3\WinForm_Study3.csproj", "{955A552D-94BD-4FA5-B64A-17666F053F11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D5EAC2C6-6F05-4EAA-89B3-3CD847B2A343}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5EAC2C6-6F05-4EAA-89B3-3CD847B2A343}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5EAC2C6-6F05-4EAA-89B3-3CD847B2A343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{955A552D-94BD-4FA5-B64A-17666F053F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{955A552D-94BD-4FA5-B64A-17666F053F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{955A552D-94BD-4FA5-B64A-17666F053F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{955A552D-94BD-4FA5-B64A-17666F053F11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
